@@ -27,6 +27,7 @@ router.get('/:id/accept', authenticateAdmin, async(req, res)=>{
         QRCode.toString(token, {type: 'terminal'}, function(err, url){
             if(err) return console.log("QR Code error")
             console.log(url)
+            console.log(token)
         })
         res.send({token: token})
     }catch(err){

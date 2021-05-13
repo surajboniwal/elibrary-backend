@@ -22,5 +22,5 @@ app.use('/lend', lendingRouter)
 
 mongoose.connect(process.env.DATABASE_STRING,{ useUnifiedTopology: true, useNewUrlParser:true }, async ()=>{
     console.log('Connected to database!')
-    app.listen(3000, ()=>console.log('Server started!'))
+    app.listen(process.env.PORT || 3000, ()=>console.log('Server started!'))
 })
